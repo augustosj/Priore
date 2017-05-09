@@ -18,8 +18,11 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   // NOME E EMAIL DO USUÁRIO
-  nome: string = 'Irineu, você não sabe nem eu';
-  email: string = 'exemplo@exemplo.priore.br'
+  menu:object = {
+    nome: 'Irineu, você não sabe nem eu',
+    email:  'exemplo@exemplo.priore.br'
+  };
+  
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();

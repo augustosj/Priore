@@ -11,11 +11,11 @@
 
     <ion-list>
 
-        <!-- SPINNER -->
+        <!-- SPINNER, falta implementar o ngFor no ion-option -->
         <ion-item>
             <ion-label>Disciplinas</ion-label>
             <ion-select [(ngModel)]="os" submitText="Okay" cancelText="Nah">
-                <!--ion-option *ngFor="let item of collection" >DOS</ion-option-->
+                <ion-option>DOS</ion-option>
             </ion-select>
         </ion-item>
 
@@ -38,6 +38,7 @@
         </ion-item>
 
     </ion-list>
+
 
     <button ion-button full clear color="dark" (click)="callCadastro()">Cadastrar</button>
 

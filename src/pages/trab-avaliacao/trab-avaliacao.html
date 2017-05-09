@@ -9,8 +9,33 @@
 
 </ion-header>
 
+<ion-content>
+  
+  <ion-list *ngIf="pFeito || pHoje || pAmanha || pPSemana || pPMes">
+    <ion-list-header *ngIf=" pFeito " >Atrasadas</ion-list-header>
+    <!--ion-item >Terminator II</ion-item-->
 
-<ion-content padding>
+    <ion-list-header *ngIf=" pHoje ">Para hoje</ion-list-header>
+    <!-- ion-item>Laallalala</ion-item-->
 
+    <ion-list-header *ngIf=" pAmanha " >Para amanhã</ion-list-header>
+    <!--ion-item>lallalala</ion-item -->
+
+    <ion-list-header *ngIf=" pPSemana " >Para a proxima semana</ion-list-header>
+    <!--ion-item>lallalala</ion-item -->
+
+    <ion-list-header *ngIf=" pPMes " >Para o proximo mês</ion-list-header>
+    <!--ion-item>lallalala</ion-item -->
+  </ion-list>
+  
+  <!-- PARA QUANDO NÃO HOUVER TAREFAS -->
+  <ion-item *ngIf="pFeito == false && pHoje == false && pAmanha == false && pPSemana == false && pPMes == false" >Não há tarefas</ion-item>
+
+  <!-- FAB -->
+  <ion-fab right bottom>
+    <button ion-fab (click)="onFabClicked()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>
