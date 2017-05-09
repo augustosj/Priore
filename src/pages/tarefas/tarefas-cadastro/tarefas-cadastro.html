@@ -11,12 +11,19 @@
 
     <ion-list>
 
+        <!-- SPINNER -->
+        <ion-item>
+            <ion-label>Disciplinas</ion-label>
+            <ion-select [(ngModel)]="os" submitText="Okay" cancelText="Nah">
+                <!--ion-option *ngFor="let item of collection" >DOS</ion-option-->
+            </ion-select>
+        </ion-item>
+
         <!-- NOME TAREFA -->
         <ion-item>
             <ion-label floating>Nome da Tarefa</ion-label>
             <ion-input type="text"></ion-input>
         </ion-item>
-
 
         <!-- DataPicker -->
         <ion-item>

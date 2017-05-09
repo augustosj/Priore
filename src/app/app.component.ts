@@ -1,11 +1,11 @@
-import { TarefasCadastroPage } from './../pages/tarefas/tarefas-cadastro/tarefas-cadastro';
-import { TarefasPage } from './../pages/tarefas/tarefas';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { TrabAvaliacao } from './../pages/trab-avaliacao/trab-avaliacao';
+import { TarefasPage } from './../pages/tarefas/tarefas';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,6 +17,10 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
+  // NOME E EMAIL DO USUÁRIO
+  nome: string = 'Irineu, você não sabe nem eu';
+  email: string = 'exemplo@exemplo.priore.br'
+
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
@@ -24,7 +28,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Tarefas', component: TarefasPage },
-      { title: 'Cadastro de Tarefas', component: TarefasCadastroPage}
+      //{ title: 'Calendário e Eventos, component: CalendarioPage' }
+      { title: 'Trabalhos e Avaliações', component: TrabAvaliacao }
     ];
 
   }

@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TarefasPage } from '../pages/tarefas/tarefas';
 import { TarefasCadastroPage } from './../pages/tarefas/tarefas-cadastro/tarefas-cadastro';
+import { TrabAvaliacao } from './../pages/trab-avaliacao/trab-avaliacao';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +16,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     TarefasPage,
-    TarefasCadastroPage
+    TarefasCadastroPage,
+    TrabAvaliacao
+
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     TarefasPage,
-    TarefasCadastroPage
+    TarefasCadastroPage,
+    TrabAvaliacao
   ],
   providers: [
     StatusBar,
