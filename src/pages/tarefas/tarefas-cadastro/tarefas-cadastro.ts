@@ -13,6 +13,7 @@ export class TarefasCadastroPage{
         month: '2018-05-01',
         timeStarts: '07:43',
         timeEnds: '1990-02-20'
+        
     }
     
     constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController){
