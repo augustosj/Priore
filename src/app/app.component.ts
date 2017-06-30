@@ -32,7 +32,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Tarefas', component: TarefasPage },
-      //{ title: 'Calendário e Eventos, component: CalendarioPage' }
+      //{ title: 'Calendário e Eventos, component: CalendarioPage' },
       { title: 'Trabalhos e Avaliações', component: TrabAvaliacao }
     ];
 
@@ -46,8 +46,8 @@ export class MyApp {
     });
   }
 
-  //IMPLEMENTA FUNÇÃO PARA A CADA ITEM DA LISTA
   openPage(page) {
     this.nav.setRoot(page.component);
   }
+
 }

@@ -12,11 +12,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from "../pages/login/login";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { RegisterPage } from "../pages/register/register";
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
+    RegisterPage,
     HomePage,
     TarefasPage,
     TarefasCadastroPage,
@@ -25,16 +27,19 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginPage,
+    RegisterPage,
     HomePage,
     TarefasPage,
     TarefasCadastroPage,
     TrabAvaliacao
+    
   ],
   providers: [
     StatusBar,
