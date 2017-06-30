@@ -1,6 +1,6 @@
-import { TarefasCadastroPage } from './tarefas-cadastro/tarefas-cadastro';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { TarefasCadastroPage } from "../tarefas-cadastro/tarefas-cadastro";
 
 @Component({
   selector: 'page-tarefas',
