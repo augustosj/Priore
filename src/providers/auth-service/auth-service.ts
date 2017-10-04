@@ -6,7 +6,7 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class AuthService {
 
-  constructor(private angularFireAuth: AngularFireAuth, private googlePlus: GooglePlus, private facebook: Facebook, private twitter: TwitterConnect) { }
+  constructor(private angularFireAuth: AngularFireAuth) { }
 
   createUser(user: User) {
     return this.angularFireAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
@@ -15,7 +15,7 @@ export class AuthService {
   signIn(user: User) {
     return this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
   }
-
+/*/
   signInWithGoogle() {
     return this.googlePlus.login({
       'webClientId': '638933829742-i0av628updkc723cb3gnirhh3b0829up.apps.googleusercontent.com',
@@ -28,9 +28,9 @@ export class AuthService {
             return user.updateProfile({ displayName: res.displayName, photoURL: res.imageUrl });
           });
       });
-  }
+  }/*/
 
-  signInWithFacebook() {
+  /*/signInWithFacebook() {
     return this.facebook.login(['public_profile', 'email'])
       .then((res: FacebookLoginResponse) => {
         //https://developers.facebook.com/docs/graph-api/reference/user
@@ -47,7 +47,7 @@ export class AuthService {
   }
 
   signOut() : firebase.Promise<any> {
-    /*/if (this.angularFireAuth.auth.currentUser.providerData.length) {
+    if (this.angularFireAuth.auth.currentUser.providerData.length) {
       for (var i = 0; i < this.angularFireAuth.auth.currentUser.providerData.length; i++) {
         var provider = this.angularFireAuth.auth.currentUser.providerData[i];
 
@@ -69,10 +69,10 @@ export class AuthService {
             })
         }
       }
-    }/*/
+    }
 
     return this.signOutFirebase();
-  }
+  }/*/
 
   private signOutFirebase() {
     return this.angularFireAuth.auth.signOut();

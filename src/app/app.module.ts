@@ -19,7 +19,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { TarefasDetalhaPage } from '../pages/tarefas-detalha/tarefas-detalha';
 import { TrabAvaliacaoDetalhaPage } from '../pages/trab-avaliacao-detalha/trab-avaliacao-detalha';
 import { AuthService } from '../providers/auth-service/auth-service';
-import { ContactServer } from '../providers/contact-server/contact-server';
+import { ContactService } from '../providers/contact-service/contact-service';
 import { SigninEmailPage } from '../pages/signin-email/signin-email';
 
 
@@ -68,8 +68,8 @@ import { SigninEmailPage } from '../pages/signin-email/signin-email';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider,
-    ContactServerProvider,
+    AuthService,
+    ContactService
   ]
 })
 export class AppModule {}
