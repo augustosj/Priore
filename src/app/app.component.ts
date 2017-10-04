@@ -7,6 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { TrabAvaliacao } from './../pages/trab-avaliacao/trab-avaliacao';
 import { TarefasPage } from './../pages/tarefas/tarefas';
 import { LoginPage } from "../pages/login/login";
+import { CalendarioPage } from '../pages/calendario/calendario';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { ConfiguracaoPage } from '../pages/configuracao/configuracao';
+import { SigninPage } from '../pages/signin/signin';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,13 +18,13 @@ import { LoginPage } from "../pages/login/login";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SigninPage;
 
   pages: Array<{title: string, component: any}>;
 
   // NOME E EMAIL DO USUÁRIO
   menu:object = {
-    nome: 'Irineu, você não sabe nem eu',
+    nome: 'Augusto Nunes',
     email:  'exemplo@exemplo.priore.br'
   };
   
@@ -32,8 +36,10 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Tarefas', component: TarefasPage },
-      //{ title: 'Calendário e Eventos, component: CalendarioPage' },
-      { title: 'Trabalhos e Avaliações', component: TrabAvaliacao }
+      { title: 'Calendário e Eventos', component: CalendarioPage },
+      { title: 'Trabalhos e Avaliações', component: TrabAvaliacao },
+      { title: 'Perfil', component: PerfilPage},
+      { title: 'Configurações', component: ConfiguracaoPage }
     ];
 
   }
