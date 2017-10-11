@@ -20,7 +20,7 @@ export class TarefasCadastroPage{
     }
     
     constructor( private fdb: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController){
-        this.fdb.list('/tarefas/').push(_data => {
+        this.fdb.list('/tarefas/').subscribe(_data => {
             this.array = _data;
             console.log(this.array);
         });
