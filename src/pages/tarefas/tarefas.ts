@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TarefasCadastroPage } from "../tarefas-cadastro/tarefas-cadastro";
+import { HttpProvider } from '../../providers/http/http';
+
 
 @Component({
   selector: 'page-tarefas',
@@ -9,6 +11,7 @@ import { TarefasCadastroPage } from "../tarefas-cadastro/tarefas-cadastro";
 export class TarefasPage {
   selectedItem: any;
 
+  messageList = [];
 
   confirma:object = {
     pFeito:  false,
@@ -18,7 +21,7 @@ export class TarefasPage {
     pPMeses:  false,
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {  
+  constructor(public navCtrl: NavController, public navParams: NavParams, httpProvider: HttpProvider) {  
     this.selectedItem = navParams.get('item');
     this.buscaTarefas();
 
@@ -37,27 +40,7 @@ export class TarefasPage {
   }
 
   buscaTarefas(){
-
-    
-    //this.confirma = this.conexaoBanco();
-    /*
-    if(this.confirma.pFeito){
-      this.confirma.pFeito = true;
-    }
-    if(this.confirma.pHoje){
-      this.pHoje = true;
-    }
-    if(this.confirma.pAmanha){
-      this.pAmanha = true;
-    }
-    if(this.confirma.pPSemana){
-      this.pPSemana = true;
-    }
-    if(this.confirma.pPMeses){
-      this.pPMeses = true;
-    }
-    */
-    
+    this.httpProvider.getMessages().subscribe( data => this.messageList = data);
 
   }
 

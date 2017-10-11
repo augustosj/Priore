@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { User } from '../../providers/auth-service/user';
-import { AuthService } from '../../providers/auth-service/auth-service';
 import { SignupPage } from '../signup/signup';
 import { SigninEmailPage } from '../signin-email/signin-email';
 
@@ -12,13 +11,12 @@ import { SigninEmailPage } from '../signin-email/signin-email';
   templateUrl: 'signin.html',
 })
 export class SigninPage {
-  user: User = new User();
+  //user: User = new User();
   @ViewChild('form') form: NgForm;
 
   constructor(
     public navCtrl: NavController,
-    private toastCtrl: ToastController,
-    private authService: AuthService) {
+    private toastCtrl: ToastController) {
   }
 
   createAccount() {

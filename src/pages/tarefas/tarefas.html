@@ -11,20 +11,15 @@
   
   <ion-list *ngIf="pFeito || pHoje || pAmanha || pPSemana || pPMes">
     <ion-list-header *ngIf=" pFeito " >Atrasadas</ion-list-header>
-    <!-- ion-item >Terminator II</ion-item-->
+    <ion-item *ngFor = 'let message of messageList'>
+    {{ message.nome }}
+    </ion-item>
 
     <ion-list-header *ngIf=" pHoje ">Para hoje</ion-list-header>
-    <ion-item>Lista de revisão</ion-item>
-    <ion-item>Atividades no Portal</ion-item>
-
     <ion-list-header *ngIf=" pAmanha " >Para amanhã</ion-list-header>
-    <!--ion-item>lallalala</ion-item -->
-
     <ion-list-header *ngIf=" pPSemana " >Para a proxima semana</ion-list-header>
-    <!--ion-item>lallalala</ion-item -->
-
     <ion-list-header *ngIf=" pPMes " >Para o proximo mês</ion-list-header>
-    <!--ion-item>lallalala</ion-item -->
+
   </ion-list>
   
   <!-- PARA QUANDO NÃO HOUVER TAREFAS -->

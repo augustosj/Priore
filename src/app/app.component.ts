@@ -18,7 +18,7 @@ import { SigninPage } from '../pages/signin/signin';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SigninPage;
+  rootPage: any = HomePage ;
 
   pages: Array<{title: string, component: any}>;
 
