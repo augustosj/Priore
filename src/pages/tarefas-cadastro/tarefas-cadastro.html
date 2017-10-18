@@ -22,19 +22,19 @@
         <!-- NOME TAREFA -->
         <ion-item>
             <ion-label floating>Nome da Tarefa</ion-label>
-            <ion-input type="text" [(ngModel)]=""></ion-input>
+            <ion-input type="text" [(ngModel)]="tarefasItem.nome"></ion-input>
         </ion-item>
 
         <!-- DataPicker -->
         <ion-item>
             <ion-label>Data da Tarefa</ion-label>
-            <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+            <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="tarefasItem.data"></ion-datetime>
         </ion-item>
 
         <!-- DESCRIÇÃO -->
         <ion-item>
             <ion-label floating>Descrição</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)] = 'tarefasItem.descricao'></ion-input>
         </ion-item>
 
     </ion-list>

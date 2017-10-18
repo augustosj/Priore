@@ -1,7 +1,9 @@
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Component } from '@angular/core';
 
-import { AngularFireDatabase } from 'angularfire2/database';
+
+import { TarefasItem } from '../../models/tarefas-item/tarefas-item.interface';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component ({
     selector: 'tarefas-cadastro',
@@ -9,8 +11,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class TarefasCadastroPage{
 
-    array = [];
+    tarefasItem = { } as TarefasItem
     
+    tarefasItemRef$: FirebaseListObservable<TarefasItem[]>;
 
     public event = {
         month: '2018-05-01',
@@ -19,21 +22,13 @@ export class TarefasCadastroPage{
         
     }
     
-    constructor( private fdb: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController){
-        this.fdb.list('/tarefas/').subscribe(_data => {
-            this.array = _data;
-            console.log(this.array);
-        });
+    constructor( private database: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController){
+        
     }
 
-    callCadastro(){
-        let alert = this.alertCtrl.create({
-            title: 'Você está tentando cadastrar uma tarefa',
-            subTitle: 'Alerta implementado por falta de conexão com o banco',
-            buttons: ['OK']
-        });
-
-        alert.present();
+    callCadastro(tarefasItem: TarefasItem){
+        
+        console.log(tarefasItem);
 
     }
 

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TarefasCadastroPage } from "../tarefas-cadastro/tarefas-cadastro";
-import { HttpProvider } from '../../providers/http/http';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { TarefasItem } from '../../models/tarefas-item/tarefas-item.interface';
 
 
 @Component({
@@ -10,8 +11,10 @@ import { HttpProvider } from '../../providers/http/http';
 })
 export class TarefasPage {
   selectedItem: any;
-
-  messageList = [];
+ 
+  tarefasItem = { } as TarefasItem;
+  
+  tarefasItemRef$: FirebaseListObservable<TarefasItem[]>;
 
   confirma:object = {
     pFeito:  false,
@@ -21,9 +24,10 @@ export class TarefasPage {
     pPMeses:  false,
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, httpProvider: HttpProvider) {  
+  constructor(private database: FirebaseListObservable, public navCtrl: NavController, public navParams: NavParams) {  
     this.selectedItem = navParams.get('item');
-    this.buscaTarefas();
+    this.tarefasItemRef$ = this.database.list('tarefas-list');
+   
 
 
   }
@@ -39,10 +43,6 @@ export class TarefasPage {
 
   }
 
-  buscaTarefas(){
-    this.httpProvider.getMessages().subscribe( data => this.messageList = data);
-
-  }
 
 
 }
